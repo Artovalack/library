@@ -3,6 +3,7 @@ const tableBody = document.querySelector("[data-table-body]");
 const modal = document.querySelector("[data-modal]");
 const addBtn = document.querySelector("[data-add-book]");
 const editBtn = document.querySelector("[data-edit-btn]");
+const cancelBtn = document.querySelector("[data-cancel]");
 let mode = "add";
 let item;
 let myLibrary = [];
@@ -43,6 +44,7 @@ function render() {
 }
 
 function edit(i) {
+    addBtn.textContent = "Update";
     mode = "edit";
     item = myLibrary.find(b => b.id === i);
 
@@ -67,9 +69,14 @@ function deleteItem(i) {
 }
 
 newBtn.addEventListener("click", () => {
+    addBtn.textContent = "Add";
     mode = "add";
     modal.showModal();
 });
+
+cancelBtn.addEventListener("click", () => {
+    modal.close();
+})
 
 addBtn.addEventListener("click", () => {
     if (mode === "add") {
