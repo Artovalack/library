@@ -3,11 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Library</title>
     <link rel="stylesheet" href="./style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
+    <div class="main-container">
+        <button class="new-btn" data-open-modal>Add New Book</button>
+        
+        <dialog class="new-item-details" data-modal closedby="any">
+            <form class="details-form" method="dialog">
+
+                <div class="inputs-container">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input id="title" name="title" type="text" placeholder="Book Title">
+                    </div>
     
+                    <div class="form-group">
+                        <label for="author">Author</label>
+                        <input id="author" name="author" type="text" placeholder="Author">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="pages">Pages</label>
+                        <input id="pages" name="pages" type="number" placeholder="Page Count">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="read">Read Status</label>
+                        <select name="read" id="read">
+                            <option value="Yes">Yes</option>
+                            <option value="Yes">No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="update-btns">
+                    <button data-add-book>Add</button>
+                    <button data-cancel>Cancel</button>
+                </div>
+                
+            </form>
+        </dialog>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>BOOK TITLE</th>
+                    <th>AUTHOR</th>
+                    <th>PAGES</th>
+                    <th>READ STATUS</th>
+                    <th>UPDATE</th>
+                </tr>
+            </thead>
+            <tbody data-table-body>
+
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
